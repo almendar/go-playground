@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/almendar/go-playground/concurrency"
+	"github.com/almendar/go-playground/phonebook"
 )
 
 func main() {
-	fmt.Println(concurrency.People)
+	fmt.Println(phonebook.Person{})
 }
