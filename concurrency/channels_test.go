@@ -146,9 +146,9 @@ func TestProcessingInParallel(t *testing.T) {
 	processInParallel := func(parallelism int) []int {
 		results := make(chan int, parallelism)
 		for i := 0; i < parallelism; i++ {
-			go func() {
-				results <- process(i)
-			}()
+			go func(arg int) {
+				results <- process(arg)
+			}(i)
 		}
 		var out []int
 		for i := 0; i < parallelism; i++ {
